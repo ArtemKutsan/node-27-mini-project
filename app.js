@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import authRouter from './routes/auth.js';
 import postsRouter from './routes/posts.js';
 import { connectDB, getDb } from './db/index.js';
-import { ObjectId } from 'mongodb';
 
 dotenv.config();
 
@@ -28,8 +27,3 @@ connectDB()
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the API' });
 });
-
-// app.use((req, res, next) => {
-//   console.log(`${req.method} ${req.url}`);
-//   next();
-// });
