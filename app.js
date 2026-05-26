@@ -10,6 +10,8 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3333;
 
+app.use(express.json());
+
 app.use('/auth', authRouter);
 app.use('/posts', postsRouter);
 
@@ -23,7 +25,9 @@ connectDB()
     console.error('Failed to start server due to MongoDB connection issue', err);
   });
 
-app.use(express.json());
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to the API' });
+});
 
 // app.use((req, res, next) => {
 //   console.log(`${req.method} ${req.url}`);
