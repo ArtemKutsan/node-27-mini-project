@@ -1,6 +1,6 @@
-import express from 'mongodb';
+import express from 'express';
 
-router = express.Router();
+const router = express.Router();
 
 // POST /posts/ - Create a new post
 router.post('/', async (req, res) => {});
